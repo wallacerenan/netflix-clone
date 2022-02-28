@@ -141,6 +141,9 @@ export const CloseButton = styled(Button)`
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   svg {
     font-size: 30px;

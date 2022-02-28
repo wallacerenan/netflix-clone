@@ -47,6 +47,14 @@ export const Title = styled('h2')`
   a {
     color: #fff;
   }
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    font-size: 2vw;
+  }
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    font-size: 3.5vw;
+  }
 `
 
 export const MoviesWrapper = styled('div')`
@@ -73,6 +81,10 @@ export const ImageWrapper = styled('div')`
 
   ${({ theme }) => theme.breakpoints.down('lg')} {
     height: calc(70vw / 2.4);
+  }
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    height: calc(70vw / 1.6);
   }
 
   &:hover {
