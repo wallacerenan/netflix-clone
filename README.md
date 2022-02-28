@@ -1,3 +1,8 @@
+## DEMO:
+
+
+[netflix-clone-vercel](https://netflix-clone-kappa-ten.vercel.app/)
+
 ## Getting Started
 
 To, run the development server:
