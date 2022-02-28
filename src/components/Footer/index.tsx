@@ -1,9 +1,13 @@
-import { Container } from './styles'
+import { Wrapper } from './styles'
+
+import Container from '@mui/material/Container'
 
 const Footer: React.FC = () => {
   return (
-    <Container>
-      <span>© 2022 Renan Wallace, Inc.</span>
+    <Container maxWidth="lg">
+      <Wrapper>
+        <span>© 2022 Renan Wallace, Inc.</span>
+      </Wrapper>
     </Container>
   )
 }

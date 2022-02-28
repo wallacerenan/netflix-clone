@@ -10,6 +10,7 @@ export type MovieResult = {
   poster_path: string
   release_date: string
   title: string
+  name: string
   video: boolean
   vote_average: number
   vote_count: number
@@ -22,4 +23,22 @@ export type Movies = {
   results: MovieResult[]
   total_pages: number
   total_results: number
+}
+
+export interface MovieVideoResult {
+  iso_639_1: string
+  iso_3166_1: string
+  name: string
+  key: string
+  site: string
+  size: number
+  type: string
+  official: boolean
+  published_at: Date
+  id: string
+}
+
+export type MovieVideo = {
+  id: number
+  results: MovieVideoResult[]
 }

@@ -1,5 +1,8 @@
 import GlobalStyles from '@mui/material/GlobalStyles'
 
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 export const Global = () => (
   <GlobalStyles
     styles={{

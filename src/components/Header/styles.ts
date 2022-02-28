@@ -1,21 +1,5 @@
 import { styled } from '@mui/material/styles'
 
-export const Container = styled('header')`
-  width: 100%;
-  display: flex;
-  height: 68px;
-  padding: 0 60px;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.7) 10%,
-    rgba(0, 0, 0, 0)
-  );
-`
-
 export const LogoWrapper = styled('div')`
   display: flex;
   align-items: center;
@@ -50,13 +34,13 @@ export const LinksWrapper = styled('ul')`
 
 export const Offset = styled('div')(({ theme }) => theme.mixins.toolbar)
 
-export const TopBar = styled('div')`
+export const TopBar = styled('header')`
   display: flex;
   align-items: center;
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 50;
+  z-index: 25;
   width: 100%;
   height: 68px;
   box-shadow: none;

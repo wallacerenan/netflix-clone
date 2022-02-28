@@ -1,12 +1,39 @@
 import { styled } from '@mui/material/styles'
+import { motion } from 'framer-motion'
 
-export const Container = styled('section')`
+import IconButton from '@mui/material/IconButton'
+
+export const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: ${({ theme }) => theme.spacing(6)};
-  padding: 20px;
+  position: relative;
+  z-index: 20;
+  margin-bottom: ${({ theme }) => theme.spacing(5.5)};
+
+  .slick-track {
+    transition-timing-function: ease-in-out !important;
+  }
+
+  .arrow {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    z-index: 30;
+    opacity: 0;
+    transition: all 400ms ease;
+
+    &.right {
+      top: 0;
+      right: 0;
+    }
+
+    &.left {
+      top: 0;
+      left: 0;
+    }
+  }
 `
 
 export const Title = styled('h2')`
@@ -24,80 +51,89 @@ export const Title = styled('h2')`
 
 export const MoviesWrapper = styled('div')`
   width: 100%;
-  padding: 12px;
   color: red;
+  margin-left: -4px;
+  position: relative;
+
+  &:hover {
+    .arrow {
+      opacity: 1 !important;
+    }
+  }
 `
 
 export const ImageWrapper = styled('div')`
   position: relative;
   transition: all 250ms ease-in-out;
-  width: 300px;
-  height: 300px;
-
-  > span {
-    position: unset !important;
-  }
-
-  .image {
-    object-fit: cover;
-    width: 100% !important;
-    height: 100% !important;
-    position: relative !important;
-    object-fit: cover !important;
-  }
-`
-
-export const ArrowImageWrapper = styled('div')`
-  position: relative;
-  width: 50px !important;
-  height: 50px !important;
-  transition: all 250ms ease-in-out;
-  opacity: 0;
-  height: 100%;
-
-  > span {
-    position: unset !important;
-  }
-
-  .image {
-    object-fit: cover;
-    width: 100% !important;
-    height: 100% !important;
-    position: relative !important;
-    object-fit: cover !important;
-
-    &.left {
-      transform: rotate(90deg) !important;
-    }
-  }
-`
-
-export const ArrowWrapper = styled('div')`
-  height: 100%;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  height: calc(100% - 12px);
+  width: 100%;
+  height: calc(70vw / 3.8);
+  overflow: hidden;
+  border-radius: 6px;
   cursor: pointer;
 
-  &.left {
-    left: 0;
-    right: initial;
-    transform: rotate(180deg) !important;
+  ${({ theme }) => theme.breakpoints.down('lg')} {
+    height: calc(70vw / 2.4);
   }
 
   &:hover {
-    background-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 0.7) 10%,
-      rgba(0, 0, 0, 0)
-    );
-    .arrow {
-      transform: scale(1.12);
-    }
+    transform: scale(1.02);
   }
+`
+
+export const SliderItem = styled(motion.div)`
+  padding: 4px;
+  position: relative;
+`
+
+export const ButtonsWrapper = styled('div')`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const Button = styled(IconButton)`
+  height: 100%;
+  border-radius: 0px;
+  padding: 0;
+  overflow: hidden !important;
+  width: 50px !important;
+  background-color: rgba(0, 0, 0, 0.12) !important;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.16) !important;
+  }
+
+  svg {
+    color: #fff !important;
+    font-size: 80px;
+  }
+`
+
+export const CardExpanded = styled('div')`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 85%;
+  color: white;
+  box-shadow: 5px 5px 15px 5px #000000;
+  background-color: #141414 !important;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`
+
+export const CardImageWrapper = styled('div')`
+  width: 100%;
+  height: 60%;
+  position: relative;
+`
+
+export const CardExpandedTitle = styled('h3')`
+  text-align: center;
 `
