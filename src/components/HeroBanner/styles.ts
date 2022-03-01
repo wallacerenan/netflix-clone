@@ -71,10 +71,12 @@ export const ButtonsWrapper = styled('div')`
   display: flex;
   color: ${({ theme }) => theme.palette.common.white};
   margin-top: ${({ theme }) => theme.spacing(2.5)};
+  flex-wrap: wrap;
 
   > * {
     &:first-of-type {
       margin-right: ${({ theme }) => theme.spacing(1.2)};
+      margin-bottom: ${({ theme }) => theme.spacing(1.2)};
     }
   }
 `

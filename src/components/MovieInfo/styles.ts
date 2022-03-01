@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
 
 export const Wrapper = styled('div')`
   position: fixed;
@@ -9,7 +10,22 @@ export const Wrapper = styled('div')`
   display: flex;
   justify-content: center;
   z-index: 30;
-  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    width: 90%;
+  }
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    max-width: initial;
+    width: 90vw;
+  }
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
     width: 100%;
@@ -34,31 +50,35 @@ export const Container = styled('div')`
   background-color: #181818;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 60vw;
   border-radius: 6px;
   color: #fff;
+  overflow: auto;
+  padding-bottom: ${({ theme }) => theme.spacing(4)};
+  width: 100%;
 
-  ${({ theme }) => theme.breakpoints.down('lg')} {
-    width: 85vw;
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    height: 80%;
   }
 
   ${({ theme }) => theme.breakpoints.down('md')} {
-    width: 90vw;
+    height: 90%;
   }
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
-    width: 100%;
+    margin-top: 0;
+    height: 100%;
   }
 `
 
 export const HeaderWrapper = styled('div')`
   width: 100%;
   height: 60vh;
+  min-height: 50vh;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-end;
   border-radius: 6px;
   overflow: hidden;
 `
@@ -81,10 +101,15 @@ export const BottomGradient = styled(Gradient)`
   );
 `
 
-export const Title = styled('h1')`
+export const Title = styled(Typography)`
   color: #fff;
   margin-bottom: ${({ theme }) => theme.spacing(4)};
   width: 60%;
+  font-size: ${({ theme }) => theme.typography.pxToRem(20)};
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    width: 80%;
+  }
 `
 
 export const ButtonsWrapper = styled('div')`
@@ -96,9 +121,13 @@ export const TitleWrapper = styled('div')`
   flex-direction: column;
   justify-content: flex-end;
   z-index: 2;
-  padding: ${({ theme }) => theme.spacing(2, 7)};
-  height: 85%;
+  padding: ${({ theme }) => theme.spacing(5, 7)};
   width: 100%;
+  margin-bottom: ${({ theme }) => theme.spacing(4)};
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    padding: ${({ theme }) => theme.spacing(2)};
+  }
 `
 
 export const Button = styled(IconButton)`
@@ -161,6 +190,14 @@ export const InfoWrapper = styled('div')`
   flex-direction: column;
   z-index: 2;
   padding: ${({ theme }) => theme.spacing(2, 7)};
+
+  ${({ theme }) => theme.breakpoints.down('lg')} {
+    padding: ${({ theme }) => theme.spacing(2, 5)};
+  }
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    padding: ${({ theme }) => theme.spacing(3)};
+  }
 
   > * {
     margin-bottom: ${({ theme }) => theme.spacing(4)};

@@ -17,6 +17,7 @@ export const Global = () => (
       'html, body': {
         backgroundColor: '#141414 !important',
         color: '#fff',
+        height: '100%',
       },
 
       body: {

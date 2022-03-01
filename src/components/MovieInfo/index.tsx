@@ -57,14 +57,18 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ movie, onClose }) => {
   useEffect(() => {
     const body = document.querySelector('body')
 
-    const lastOverflow = body?.style.overflowY as string
-
-    if (movie) {
-      body && (body.style.overflowY = 'hidden')
+    if (movie && body) {
+      body.style.position = 'fixed'
+      body.style.width = '100%'
+      body.style.height = '100%'
     }
 
     return () => {
-      body && (body.style.overflowY = lastOverflow)
+      if (body) {
+        body.style.position = 'initial'
+        body.style.width = 'initial'
+        body.style.height = 'initial'
+      }
     }
   }, [movie])
 
@@ -141,7 +145,7 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ movie, onClose }) => {
                   />
                 )}
                 <TitleWrapper>
-                  <Title>{movie.title ?? movie.name}</Title>
+                  <Title variant="h3">{movie.title ?? movie.name}</Title>
                   <ButtonsWrapper>
                     <ButtonPlay
                       onClick={() => {
