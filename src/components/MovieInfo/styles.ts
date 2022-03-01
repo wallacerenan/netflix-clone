@@ -105,7 +105,6 @@ export const Title = styled(Typography)`
   color: #fff;
   margin-bottom: ${({ theme }) => theme.spacing(4)};
   width: 60%;
-  font-size: ${({ theme }) => theme.typography.pxToRem(20)};
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
     width: 80%;
