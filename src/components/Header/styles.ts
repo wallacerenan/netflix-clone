@@ -14,6 +14,7 @@ export const LinksWrapper = styled('ul')`
     transition: color 400ms;
     font-size: 14px;
     color: ${({ theme }) => theme.palette.common.white};
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.55);
 
     &:first-of-type {
       margin-right: ${({ theme }) => theme.spacing(2)};
